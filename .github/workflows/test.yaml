@@ -12,4 +12,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run phpunit action
-        uses: ./actions/snappycache-docker-test-action
+        uses: ./.github/actions/snappycache-docker-test-action
