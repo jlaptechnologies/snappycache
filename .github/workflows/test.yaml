@@ -15,5 +15,5 @@ jobs:
         uses: ./.github/actions/snappycache-docker-test-action
       - name: Run phpunit outside container
         run: |
-          docker build -f ./test.Dockerfile --tags jlaptechnologies:snappycache-phpunit
+          docker build -f ./test.Dockerfile -t jlaptechnologies:snappycache-phpunit .
           docker run --rm -w /app jlaptechnologies:snappycache-phpunit phpunit -c /app/phpunit.xml /app/tests/
