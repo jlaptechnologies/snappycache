@@ -11,9 +11,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Run phpunit action
+      - name: Build test container
         uses: ./.github/actions/snappycache-docker-test-action
-      - name: Run phpunit outside container
+      - name: Run phpunit
         run: |
           docker build -f ./test.Dockerfile -t jlaptechnologies:snappycache-phpunit .
           docker run --rm -w /app jlaptechnologies:snappycache-phpunit phpunit -c /app/phpunit.xml /app/tests/

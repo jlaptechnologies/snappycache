@@ -12,5 +12,4 @@ COPY docker/php/usr/local/etc/php/php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /app
 
-RUN composer install -vvv && \
-    phpunit
+RUN composer install -vvv
