@@ -1,5 +1,5 @@
 name: 'SnappyCache Test'
-description: 'Greet someone and record the time'
+description: 'Runs phpunit and other tests'
 runs:
   using: 'docker'
   image: 'Dockerfile'
