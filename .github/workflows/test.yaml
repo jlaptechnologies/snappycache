@@ -6,7 +6,7 @@ on:
     - cron: '20 2 1,15 * *'
 jobs:
   test:
-    runs-on: php:8.3.2-cli-alpine3.19
+    runs-on: ubuntu-latest
     name: phpunit tests
     steps:
       - name: Run phpunit action
