@@ -15,5 +15,4 @@ jobs:
         uses: ./.github/actions/snappycache-docker-test-action
       - name: Run phpunit again
         run: |
-          cd /app
           phpunit
