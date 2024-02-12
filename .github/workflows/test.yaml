@@ -10,6 +10,6 @@ jobs:
     name: phpunit tests
     steps:
       - name: Run phpunit action
-        uses: actions/snappycache-docker-test-action
+        uses: ./actions/snappycache-docker-test-action
       - name: Checkout
         uses: actions/checkout@v4
