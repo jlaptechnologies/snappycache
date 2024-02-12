@@ -14,5 +14,6 @@ jobs:
       - name: Run phpunit action
         uses: ./.github/actions/snappycache-docker-test-action
       - name: Run phpunit again
+        uses: ./.github/actions/snappycache-docker-test-action
         run: |
           phpunit -c /app/phpunit.xml /app/tests/
