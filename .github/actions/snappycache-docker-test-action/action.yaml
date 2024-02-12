@@ -3,11 +3,5 @@ description: 'Runs phpunit and other tests'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-steps:
-  - name: checkout
-    uses: actions/checkout@v4
-  - name: build
-    run: |
-      docker build --no-cache .
       
 
