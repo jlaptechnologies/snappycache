@@ -6,6 +6,10 @@ RUN wget -O phpunit.phar https://phar.phpunit.de/phpunit-10.phar && \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+RUN getcwd
+
+RUN ls -lash .
+
 COPY ./docker/php/usr/local/etc/php/php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /app
