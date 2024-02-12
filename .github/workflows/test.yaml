@@ -13,3 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Run phpunit action
         uses: ./.github/actions/snappycache-docker-test-action
+      - name: Run phpunit again
+        run: |
+          cd /app
+          phpunit
