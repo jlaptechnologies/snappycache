@@ -2,6 +2,6 @@ name: 'SnappyCache Test'
 description: 'Runs phpunit and other tests'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: '../../../test.Dockerfile'
       
 
