@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     name: phpunit tests
     steps:
-      - name: Notify
-        if: always()
-        uses: wei/curl@v1
-        with:
-          args: -X POST -F 'token=${{ secrets.TEST_PUSHOVER_KEY }}' -F 'user=${{ secrets.TEST_PUSHOVER_USER }}' -F 'message=SnappyCache Test Pipeline ${{ job.status }}' https://api.pushover.net/1/messages.json
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build test container
@@ -22,3 +17,8 @@ jobs:
       - name: Run phpunit with cached container
         run: |
           docker run --rm -w /app jlaptechnologies:snappycache-phpunit phpunit -c /app/phpunit.xml /app/tests/
+      - name: Notify
+        if: always()
+        uses: wei/curl@v1
+        with:
+          args: -X POST -F 'token=${{ secrets.TEST_PUSHOVER_KEY }}' -F 'user=${{ secrets.TEST_PUSHOVER_USER }}' -F 'message=SnappyCache Test Pipeline ${{ job.status }}' https://api.pushover.net/1/messages.json
