@@ -16,10 +16,9 @@ jobs:
           args: -X POST -F 'token=${{ secrets.TEST_PUSHOVER_KEY }}' -F 'user=${{ secrets.TEST_PUSHOVER_USER }}' -F 'message=SnappyCache Test Pipeline ${{ job.status }}' https://api.pushover.net/1/messages.json
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Run phpunit
+      - name: Build test container
         run: |
           docker build -f ./test.Dockerfile -t jlaptechnologies:snappycache-phpunit .
-          docker run --rm -w /app jlaptechnologies:snappycache-phpunit phpunit -c /app/phpunit.xml /app/tests/
       - name: Run phpunit with cached container
         run: |
           docker run --rm -w /app jlaptechnologies:snappycache-phpunit phpunit -c /app/phpunit.xml /app/tests/
